@@ -1,59 +1,61 @@
 import java.util.ArrayList;
 
 public class Adventure {
-    private final String id;
-    private ArrayList<Bottle> bottleArray =  new ArrayList<>();
-    private ArrayList<Equipment> equipmentArray =  new ArrayList<>();
-    private int equipmentnum = 0;
-    private int bottlenum = 0;
+    private String id;
+    private ArrayList<Bottle> bottles = new ArrayList<>();
+    private ArrayList<Equipment> equipments = new ArrayList<>();
 
-    public Adventure(String name) {
-        this.id = name;
-    }
-
-    public void AddEquipment(String name) {
-        Equipment equipment = new Equipment(name);
-        this.equipmentArray.add(equipment);
-        this.equipmentnum++;
-    }
-
-    public void AddBottle(String name,int effect) {
-        Bottle bottle = new Bottle(name,effect);
-        this.bottleArray.add(bottle);
-        this.bottlenum++;
-    }
-
-    public void RemoveBottle(String name) {
-        for (Bottle bottle : this.bottleArray) {
-            if (bottle.getId().equals(name)) {
-                bottlenum--;
-                System.out.printf("%d %d%n",bottlenum,bottle.getEffect());
-                this.bottleArray.remove(bottle);
-                break;
-            }
-        }
-    }
-
-    public void RemoveEquipment(String name) {
-        for (Equipment equipment : this.equipmentArray) {
-            if (equipment.getId().equals(name)) {
-                equipmentnum--;
-                System.out.printf("%d%n",equipmentnum);
-                this.equipmentArray.remove(equipment);
-                break;
-            }
-        }
+    public Adventure(String id) {
+        this.id = id;
     }
 
     public String getId() {
-        return this.id;
+        return id;
     }
 
-    public ArrayList<Bottle> getBottleArray() {
-        return this.bottleArray;
+    public ArrayList<Bottle> getBottles() {
+        return bottles;
     }
 
-    public ArrayList<Equipment> getEquipmentArray() {
-        return this.equipmentArray;
+    public ArrayList<Equipment> getEquipments() {
+        return equipments;
+    }
+
+    public void AddBottle(Bottle bottle) {
+        bottles.add(bottle);
+    }
+
+    public void AddEquipment(Equipment equipment) {
+        equipments.add(equipment);
+    }
+
+    public void RemoveBottle(String bottleId) {
+        Bottle bottle = this.FindBottle(bottleId);
+        bottles.remove(bottle);
+    }
+
+    public void RemoveEquipment(String equipmentId) {
+        Equipment equipment = this.FindEquipment(equipmentId);
+        equipments.remove(equipment);
+    }
+
+    public Bottle FindBottle(String bottleId) {
+        for (Bottle bottle : bottles) {
+            if (bottle.getId().equals(bottleId)) {
+                return bottle;
+            }
+        }
+        System.out.println("没要找到瓶子！");
+        return null;
+    }
+
+    public Equipment FindEquipment(String equipmentId) {
+        for (Equipment equipment : equipments) {
+            if (equipment.getId().equals(equipmentId)) {
+                return equipment;
+            }
+        }
+        System.out.println("没有找到装备！");
+        return null;
     }
 }

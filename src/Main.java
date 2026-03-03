@@ -1,58 +1,18 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Adventure> adventureArray = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        for (int i = 0; i < n; i++) {
-            String operate = input.next();
-            if (operate.equals("aa")) {
-                String advid = input.next();
-                Adventure adv = new Adventure(advid);
-                adventureArray.add(adv);
-            }
-            else if (operate.equals("ab")) {
-                String id = input.next();
-                for (Adventure adv : adventureArray) {
-                    if (adv.getId().equals(id)) {
-                        String bottleid = input.next();
-                        int bottleeffect =  input.nextInt();
-                        adv.AddBottle(bottleid,bottleeffect);
-                    }
-                }
-            }
-            else if (operate.equals("ae")) {
-                String id = input.next();
-                for (Adventure adv : adventureArray) {
-                    if (adv.getId().equals(id)) {
-                        String equipid = input.next();
-                        adv.AddEquipment(equipid);
-                    }
-                }
-            }
-            else if (operate.equals("rb")) {
-                String id = input.next();
-                for (Adventure adv : adventureArray) {
-                    if (adv.getId().equals(id)) {
-                        String bottleid = input.next();
-                        adv.RemoveBottle(bottleid);
-                    }
-                }
-            }
-            else {
-                String id = input.next();
-                for (Adventure adv : adventureArray) {
-                    if (adv.getId().equals(id)) {
-                        String equipid = input.next();
-                        adv.RemoveEquipment(equipid);
-                    }
-                }
-            }
+        ArrayList<ArrayList<String>> inputInfo = new ArrayList<>(); // 解析后的输入将会存进该容器中, 类似于c语言的二维数组
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine().trim()); // 读取行数
+        for (int i = 0; i < n; ++i) {
+            String nextLine = scanner.nextLine(); // 读取本行指令
+            String[] strings = nextLine.trim().split(" +"); // 按空格对行进行分割
+            inputInfo.add(new ArrayList<>(Arrays.asList(strings))); // 将指令分割后的各个部分存进容器中
         }
-
-
+        Game game = new Game();
+        game.StartGame(n,inputInfo);
     }
-
 }

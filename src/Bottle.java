@@ -1,9 +1,9 @@
 public class Bottle {
-    private final String id;
-    private final int effect;
+    private String id;
+    private int effect;
 
-    public Bottle(String name,int effect) {
-        this.id = name;
+    public Bottle(String id, int effect) {
+        this.id = id;
         this.effect = effect;
     }
 
@@ -14,5 +14,4 @@ public class Bottle {
     public int getEffect() {
         return effect;
     }
-
 }

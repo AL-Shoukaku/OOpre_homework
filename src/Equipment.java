@@ -1,8 +1,8 @@
 public class Equipment {
-    private final String id;
+    private String id;
 
-    public Equipment(String name) {
-        this.id = name;
+    public Equipment(String id) {
+        this.id = id;
     }
 
     public String getId() {
