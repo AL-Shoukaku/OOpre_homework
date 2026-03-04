@@ -8,5 +8,9 @@ public class Equipment {
     public String getId() {
         return id;
     }
+
+    public String getType() {
+        return "Equipment";
+    }
 }
 

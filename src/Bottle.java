@@ -1,4 +1,4 @@
-public class Bottle {
+public class Bottle implements Usable {
     private String id;
     private int effect;
 
@@ -13,5 +13,13 @@ public class Bottle {
 
     public int getEffect() {
         return effect;
+    }
+
+    public String getType() {
+        return "Bottle";
+    }
+
+    public boolean use(Adventure adv,Adventure target) {
+        return true;
     }
 }

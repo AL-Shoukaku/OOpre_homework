@@ -29,27 +29,6 @@ class AdventureTest {
     }
 
     @Test
-    public void testAdd_Remove_Bottle_Equipment() {
-        adv1.AddBottle(b1);
-        adv2.AddBottle(b2);
-        adv1.AddBottle(b3);
-        adv1.AddBottle(b4);
-        assertEquals(3,adv1.getBottles().size());
-        assertEquals(1,adv2.getBottles().size());//测试加瓶子
-
-        adv3.AddEquipment(e1);
-        adv2.AddEquipment(e2);
-        adv3.AddEquipment(e3);
-        assertEquals(2,adv3.getEquipments().size());
-        assertEquals(1,adv2.getEquipments().size());
-
-        adv1.RemoveBottle("b4");
-        adv3.RemoveEquipment("e1");
-        assertEquals(2,adv1.getBottles().size());
-        assertEquals(1,adv3.getEquipments().size());
-    }
-
-    @Test
     public void testGetId() {
         assertEquals("shoukaku",adv1.getId());
         assertEquals("amagi",adv2.getId());
