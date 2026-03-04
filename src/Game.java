@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Game {
-    private ArrayList<Adventure> adventures = new ArrayList<Adventure>();
+    private ArrayList<Adventure> adventures = new ArrayList<>();
 
     public Game() {
     }
@@ -49,7 +49,7 @@ public class Game {
     public void RemoveBottle(Adventure adv,String bottleId) {
         Bottle bottle = adv.FindBottle(bottleId);
         adv.RemoveBottle(bottleId);
-        System.out.println(bottle.getEffect() + " " + adv.getBottles().size());
+        System.out.println(adv.getBottles().size() + " " + bottle.getEffect());
     }
 
     public void RemoveEquipment(Adventure adv,String equipmentId) {
@@ -65,6 +65,4 @@ public class Game {
         }
         return null;
     }
-
-
 }
