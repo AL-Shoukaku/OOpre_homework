@@ -39,14 +39,14 @@ public class GameTest {
         game.AddBottle(adv2,"b7","HpBottle",170);
         game.AddBottle(adv1,"b8","AtkBottle",180);
 
-        game.AddEquipment(adv1,"e1");
-        game.AddEquipment(adv2,"e2");
-        game.AddEquipment(adv3,"e3");
-        game.AddEquipment(adv4,"e4");
-        game.AddEquipment(adv5,"e5");
-        game.AddEquipment(adv5,"e6");
-        game.AddEquipment(adv5,"e7");
-        game.AddEquipment(adv3,"e8");
+        game.AddEquipment(adv1,"e1","Sword",10);
+        game.AddEquipment(adv2,"e2","Magicbook",20);
+        game.AddEquipment(adv3,"e3","Armour",30);
+        game.AddEquipment(adv4,"e4","Sword",40);
+        game.AddEquipment(adv5,"e5","Magicbook",50);
+        game.AddEquipment(adv5,"e6","Armour",60);
+        game.AddEquipment(adv5,"e7","Sword",70);
+        game.AddEquipment(adv3,"e8","Sword",80);
 
         game.TakeItem(adv1,"b1");
         game.TakeItem(adv2,"b2");

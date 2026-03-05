@@ -1,8 +1,10 @@
-public class Equipment {
+public class Equipment implements Item {
     private String id;
+    private int ce;
 
-    public Equipment(String id) {
+    public Equipment(String id,int ce) {
         this.id = id;
+        this.ce = ce;
     }
 
     public String getId() {
@@ -11,6 +13,10 @@ public class Equipment {
 
     public String getType() {
         return "Equipment";
+    }
+
+    public int getCE() {
+        return ce;
     }
 }
 

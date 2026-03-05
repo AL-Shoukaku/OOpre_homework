@@ -1,4 +1,4 @@
-public class Bottle implements Usable {
+public class Bottle implements Usable,Item {
     private String id;
     private int effect;
 

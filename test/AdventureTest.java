@@ -23,9 +23,9 @@ class AdventureTest {
         b2 = new Bottle("b2",200);
         b3 = new Bottle("b3",150);
         b4 = new Bottle("b4",300);
-        e1 = new Equipment("e1");
-        e2 = new Equipment("e2");
-        e3 = new Equipment("e3");
+        e1 = new Equipment("e1",10);
+        e2 = new Equipment("e2",20);
+        e3 = new Equipment("e3",30);
     }
 
     @Test
